@@ -1,0 +1,27 @@
+CREATE TABLE loyal (
+ id INT PRIMARY KEY NOT NULL,
+ cart INT NOT NULL,
+ username INT NOT NULL,
+ price INT,
+ check_point INT,
+ cash_back INT,
+ FOREIGN KEY (cart) REFERENCES cart(id),
+ FOREIGN KEY (price) REFERENCES price(id),
+ FOREIGN KEY (username) REFERENCES users(id)
+);
+
+CREATE TABLE users (
+ id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+ username VARCHAR(255) NOT NULL,
+ password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE price (
+ id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+ price INT NOT NULL
+);
+
+CREATE TABLE cart (
+ id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+ cart INT NOT NULL
+);
